@@ -8,7 +8,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 #diretorios.
-source_dir = "H:\\Documentos\\Backup do PC\\Imagens\\iPhone - Galaxy"
+source_dir = "DIRETORIO RAIZ"
 dest_dir_DontExif = f"{source_dir}\\DontEXIF"
 dest_dir_video = f"{source_dir}\\videos"
 year_dirs = {year: f"{source_dir}\\{year}" for year in range(2010, 2025)}
