@@ -1,8 +1,39 @@
-# Photo_Automation
- Projeto de Organização de Fotos por Data:
-Este projeto visa organizar fotos com base na data em que foram tiradas. O código realiza a verificação da data original das fotos e as organiza adequadamente. Além disso, o projeto inclui um script capaz de exibir diversas informações sobre cada foto, tais como:
- - Data original em que a foto foi tirada
- - Localização das coordenadas de latitude e longitude
- - Modelo do aparelho usado para tirar a foto
- - Outras informações relevantes
-Essa funcionalidade é especialmente útil para manter uma biblioteca de fotos bem organizada e para acessar facilmente detalhes específicos sobre cada imagem.
+# Organizador de Arquivos Multimídia
+
+Este script Python organiza arquivos de imagem e vídeo em diretórios específicos com base em suas características e metadados. Ele utiliza as bibliotecas `exif`, `watchdog` e `logging` para monitorar e mover arquivos.
+
+## Funcionalidades
+
+- **Organização por Ano**: Move arquivos de imagem para diretórios com base no ano extraído dos metadados EXIF da imagem.
+- **Separação por Tipo de Arquivo**: Move arquivos de imagem e vídeo para diretórios distintos.
+- **Arquivamento de Imagens sem EXIF**: Move imagens que não contêm metadados EXIF para um diretório separado.
+- **Detecção Automática de Arquivos**: Monitora um diretório raiz em tempo real e organiza os arquivos conforme são adicionados ou modificados.
+
+## Estrutura de Diretórios
+
+- `DIRETORIO RAIZ`: Diretório principal onde os arquivos são monitorados e organizados.
+- `DontEXIF`: Diretório para imagens que não possuem metadados EXIF.
+- `videos`: Diretório para arquivos de vídeo.
+- `2010`, `2011`, ..., `2024`: Diretórios para imagens, organizadas por ano.
+
+## Tipos de Arquivos Suportados
+
+- **Imagens**: `.jpg`, `.jpeg`, `.gif`, `.png`, `.tiff`, `.bmp`, entre outros.
+- **Vídeos**: `.mp4`, `.avi`, `.mov`, `.mkv`, entre outros.
+
+## Como Usar
+
+1. **Configuração**: Ajuste o `source_dir` para o diretório que deseja monitorar.
+2. **Execução**: Execute o script. Ele começará a monitorar o diretório raiz e moverá arquivos conforme definidos.
+3. **Logs**: Logs de movimentação dos arquivos serão registrados e podem ser visualizados para verificar o status da organização.
+
+## Requisitos
+
+- `exif`
+- `watchdog`
+- `logging`
+
+Você pode instalar as dependências com:
+
+```bash
+pip install exif watchdog
